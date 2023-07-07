@@ -29,7 +29,7 @@
                         <!-- Logo -->
                         <div id="logo" class=" uk-hidden@s">
                             <a href="home.html">
-                                <b><h1 style="text-transform: uppercase;">Social Book</h1></b>
+                                <b><h1 style="text-transform: uppercase;">Pics journal</h1></b>
                             </a>
                         </div>
 
@@ -181,6 +181,19 @@
                                 <li><a href="/profile/{{ user_profile.user }}"> Your Profile </a> </li>
                                 <li><a href="/settings"> Account settings </a> </li>
                                 <li><a href="logout"> Log Out</a></li>
+                                <form action="upload" method="POST" enctype="multipart/form-data" >
+                                    {% csrf_token %}
+
+                                    <p class="my-3 leading-6"> Upload pics
+                                    </p>
+                                    <div>
+                                        <input type="file" name="image_upload">
+                                        <!-- <a href="#" class="button soft-warning small"> Choose file</a> -->
+                                        <textarea class="button soft-warning small" name="caption" placeholder="caption..." ></textarea>
+                                        <br>
+                                        <button class="button bg-blue-700" type="submit" >Upload</button>
+                                    </div>
+                                </form>
                             </ul>
                         </div>
 
